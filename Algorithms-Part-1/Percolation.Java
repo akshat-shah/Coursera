@@ -1,19 +1,19 @@
 /*
-*		AUTHOR:			AKSHAT SHAH
-*		WRITTEN:		06/28/2015
+*	AUTHOR:		AKSHAT SHAH
+*	WRITTEN:	06/28/2015
 *
-*		COMPILATION:	javac Percolation.java
-*		EXECUTION:		java Percolation sample_input_file.txt
+*	COMPILATION:	javac Percolation.java
+*	EXECUTION:	java Percolation sample_input_file.txt
 *
-*		JAR Files:		http://algs4.cs.princeton.edu/code/index.php
+*	JAR Files:	http://algs4.cs.princeton.edu/code/index.php
 *
-*		DESCRIPTION:	An application of the dynamic connectivity problem sovled using Quick Union (Union Find) Algorithm
+*	DESCRIPTION:	An application of the dynamic connectivity problem sovled using Quick Union (Union Find) Algorithm
 */
 public class Percolation
 {
 	private int N, Nsq;			// variable to store Grid size
 	private boolean[][] site;
-	private WeightedQuickUnionUF uf;		//Weighted Quick Union algorithm using Algs4.jar
+	private WeightedQuickUnionUF uf;	//Weighted Quick Union algorithm using Algs4.jar
 	private WeightedQuickUnionUF uf_backwash;;
 	private boolean percolated = false;
 
@@ -90,20 +90,20 @@ public class Percolation
 				uf_backwash.union(pos, pos2);
 			}
 
-			if (i == 0)							// Union with Virtual Top node
+			if (i == 0)				// Union with Virtual Top node
 			{
 				uf.union(Nsq, pos);
 				uf_backwash.union(Nsq, pos);
 			}
 
-			if (i == N-1)						// Union with Virtual Bottom node
+			if (i == N-1)				// Union with Virtual Bottom node
 			{
 				uf.union((Nsq+1), pos);
 			}
 		}
 	}
 
-	public boolean isOpen(int i, int j)     // is site (row i, column j) open?
+	public boolean isOpen(int i, int j)     	// is site (row i, column j) open?
 	{
 		i--;
 		j--;
@@ -114,7 +114,7 @@ public class Percolation
 	}
 
 
-	public boolean isFull(int i, int j)     // is site (row i, column j) full?
+	public boolean isFull(int i, int j		// is site (row i, column j) full?
 	{
 		
 		i--;
@@ -141,9 +141,9 @@ public class Percolation
 		return percolated;
 	}
 
-	public static void main(String[] args)   // test client (optional)
+	public static void main(String[] args)   	// test client (optional)
 	{
-		In in = new In(args[0]);			// Accessing the input file
+		In in = new In(args[0]);		// Accessing the input file
 		int N = in.readInt();				
 		Percolation perc = new Percolation(N);	// N-by-N percolation system
 
