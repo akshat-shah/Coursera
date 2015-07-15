@@ -2,12 +2,12 @@
 *		AUTHOR:			AKSHAT SHAH
 *		WRITTEN:		07/02/2015
 *
-*		COMPILATION:	javac Deque.java
+*		COMPILATION:		javac Deque.java
 *		EXECUTION:		java Deque
 *
 *		JAR Files:		http://algs4.cs.princeton.edu/code/index.php
 *
-*		DESCRIPTION:	Creating a Double-ended Queue (Deque) using Linked-lists, and making basic operations on it.
+*		DESCRIPTION:		Creating a Double-ended Queue (Deque) using Linked-lists, and making basic operations on it.
 */
 import java.util.Iterator;
 
@@ -56,11 +56,11 @@ public class Deque<Item> implements Iterable<Item>
 			return;
 		}
 
-		Node oldfirst = first;				// A    B
+		Node oldfirst = first;			// A    B
 		first = new Node();
 		first.item = item;
-		first.next = oldfirst;				// First ---> Oldfirst
-		oldfirst.prev = first;				// First <==> Oldfirst
+		first.next = oldfirst;			// First ---> Oldfirst
+		oldfirst.prev = first;			// First <==> Oldfirst
 
 		N++;
 	}
@@ -82,8 +82,8 @@ public class Deque<Item> implements Iterable<Item>
 		Node oldlast = last;
 		last = new Node();
 		last.item = item;					
-		last.prev = oldlast;				// Oldlast <--- Last 
-		oldlast.next = last;				// Oldlast <==> Last
+		last.prev = oldlast;			// Oldlast <--- Last 
+		oldlast.next = last;			// Oldlast <==> Last
 
 		N++;
 	}
